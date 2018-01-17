@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="movies.xsl" type="text.xsl"?>
+<collection>
+<movie>
+  <title>Happy Dil</title>
+  <year>2018</year>
+  <genre>Comedy</genre>
+</movie>
+<movie>
+  <title>Rango</title>
+  <year>2017</year>
+  <genre>Animated</genre>
+</movie>
+<movie>
+  <title>Three Kings</title>
+  <year>2016</year>
+  <genre>Action</genre>
+</movie>
+</collection>
+
+
+movie.xsl:
+
+
+<?xml version="2.0" encoding="ISO-8859-1"?>
+<xsl:stylesheet version="2.0" xmlns="http://www.w3.org/1999/XSL/Tranform">
+<xsl:template match="/collection">
+<html>
+<body>
+<table border="1">
+<tr>
+<th>Title</th>
+<th>Genre</th>
+<th>Year</th>
+</tr>
+<xsl:for-each select="movie">
+<tr>
+  <xsl:value-of select="title"/><br/>
+  <xsl:value-of select="year"/><br/>
+  <xsl:value-of select="genere"/><br/>
+</tr>
+</xsl:for-each>
+</table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+
+
+
